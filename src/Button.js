@@ -1,10 +1,10 @@
 import React from "react";
 import {ThemeContextConsumer} from "./themeContext";
 
-const Button = ({theme}) => {
+const Button = () => {
     return (
         <ThemeContextConsumer>
-            {theme => (<button className={`${theme}-theme`}>Switch Theme</button>)}
+            {context => (<button onClick={context.toggleTheme} className={`${context.theme}-theme`} >Switch Theme</button>)}
         </ThemeContextConsumer>
         
     )

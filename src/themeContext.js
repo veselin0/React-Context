@@ -1,15 +1,25 @@
-import {createContext, Component} from "react";
+import { createContext, Component } from "react";
 
-const {Provider, Consumer} = createContext();
+const { Provider, Consumer } = createContext();
 
 class ThemeContextProvider extends Component {
+    state = {
+        theme: "dark",
+    };
+
+    toggleTheme = () => {
+        this.setState((prevState) => {
+            return { theme: prevState.theme === "light" ? "dark" : "light" };
+        });
+    };
+
     render() {
         return (
-            <Provider value={"dark"}>
+            <Provider value={{theme: this.state.theme, toggleTheme: this.toggleTheme}}>
                 {this.props.children}
             </Provider>
         );
     }
 }
 
-export {ThemeContextProvider, Consumer as ThemeContextConsumer};
+export { ThemeContextProvider, Consumer as ThemeContextConsumer };

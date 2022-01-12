@@ -1,14 +1,14 @@
-import React, {createContext} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import ThemeContext from "./themeContext";
 
-const ThemeContext = createContext();
-const {Provider, Consumer} = ThemeContext;
+
 
 ReactDOM.render(
-    <Provider value={"light"}>
+    <ThemeContext.Provider value={"dark"}>
         <App />
-    </Provider>,
+    </ThemeContext.Provider>,
     document.getElementById("root")
 );

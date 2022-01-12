@@ -1,17 +1,15 @@
 import Button from "./Button";
 import Header from "./Header";
 
-import ThemeContext from "./themeContext";
+import {ThemeContextConsumer} from "./themeContext";
 
 function App() {
     return (
         <div>
             <Header />
-            <ThemeContext.Consumer>
+            <ThemeContextConsumer>
                 {theme => <Button theme={theme} />}
-            </ThemeContext.Consumer>
-
-            <Button theme="light" />
+            </ThemeContextConsumer>
         </div>
     );
 }

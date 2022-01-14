@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "./themeContext";
 
-const Header = (props) => {
+const Header = () => {
     const { theme } = useContext(ThemeContext);
     return (
         <header className={`${theme}-theme`}>
